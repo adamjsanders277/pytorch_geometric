@@ -604,7 +604,7 @@ class GlobalStorage(NodeStorage, EdgeStorage):
             self._cached_attr[AttrType.NODE].add(key)
             return True
 
-        if 'edge' not in key:
+        if key not in E_KEYS:
             self._cached_attr[AttrType.NODE].add(key)
             return True
         else:
@@ -650,7 +650,7 @@ class GlobalStorage(NodeStorage, EdgeStorage):
             self._cached_attr[AttrType.EDGE].add(key)
             return True
 
-        if 'edge' in key:
+        if key in E_KEYS:
             self._cached_attr[AttrType.EDGE].add(key)
             return True
         else:
